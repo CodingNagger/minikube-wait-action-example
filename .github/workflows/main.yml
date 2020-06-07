@@ -16,7 +16,8 @@ jobs:
     - name: Wait for pods
       uses: CodingNagger/minikube-wait-action@master
       with:
-        all-namespaces: true
+        namespace: default
+        all-namespaces: false
     - name: Check pods
       run: |
         kubectl get pods
