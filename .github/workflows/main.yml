@@ -15,6 +15,8 @@ jobs:
       run: kubectl apply -f https://k8s.io/examples/application/deployment.yaml
     - name: Wait for pods
       uses: CodingNagger/minikube-wait-action@master
+      with:
+        all-namespaces: true
     - name: Check pods
       run: |
         kubectl get pods
